@@ -163,22 +163,22 @@ keybinds {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "Ctrl p" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
-        bind "Alt n" { SwitchToMode "Resize"; }
+        bind "Ctrl r" { SwitchToMode "Resize"; }
     }
     shared_except "scroll" "locked" {
-        bind "Alt s" { SwitchToMode "Scroll"; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        bind "Alt o" { SwitchToMode "Session"; }
+        bind "Ctrl o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
-        bind "Alt t" { SwitchToMode "Tab"; }
+        bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Alt h" { SwitchToMode "Move"; }
+        bind "Ctrl m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Alt b" { SwitchToMode "Tmux"; }
