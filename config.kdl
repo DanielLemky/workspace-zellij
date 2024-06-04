@@ -262,16 +262,23 @@ plugins {
 //
 themes {
     forest {
-         fg "#ffffff"
+         // fg "#ffffff"
+         // fg "#c1dbd1"
+         // fg "#FEEEE9"
+         fg "#B3D6BB"
          bg "#000000"
          red "#511123"
          // green "#763e36"
-         green "#80b5a0"
+         // green "#80b5a0"
+         green "#ffffff"
+         // green "#FDEDDE"
+         // green "#B3D6BB"
          yellow 241 250 140
          blue 98 114 164
          magenta 255 121 198
          orange 255 184 108
-         cyan "#ffffff"
+         // cyan "#ffffff"
+         cyan "#c1dbd1"
          black "#11513f"
          // black "#80b5a0"
          white "#ffffff"
