@@ -1,6 +1,32 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
     normal {
+        bind "Ctrl h" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "left";
+            };
+        }
+        bind "Ctrl j" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+            };
+        }
+        bind "Ctrl k" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+            };
+        }
+        bind "Ctrl l" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "right";
+            };
+        }
+    }
+    normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
@@ -150,10 +176,10 @@ keybinds {
         bind "Ctrl n" { NewPane; }
         bind "Ctrl i" { MoveTab "Left"; }
         bind "Ctrl o" { MoveTab "Right"; }
-        bind "Ctrl h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Ctrl l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Ctrl j" "Alt Down" { MoveFocus "Down"; }
-        bind "Ctrl k" "Alt Up" { MoveFocus "Up"; }
+        // bind "Ctrl h" "Alt Left" { MoveFocusOrTab "Left"; }
+        // bind "Ctrl l" "Alt Right" { MoveFocusOrTab "Right"; }
+        // bind "Ctrl j" "Alt Down" { MoveFocus "Down"; }
+        // bind "Ctrl k" "Alt Up" { MoveFocus "Up"; }
         bind "Ctrl =" "Alt +" { Resize "Increase"; }
         bind "Ctrl -" { Resize "Decrease"; }
         bind "Ctrl [" { PreviousSwapLayout; }
