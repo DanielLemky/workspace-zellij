@@ -411,3 +411,9 @@ theme "everforest"
 // Default: false
 //
 // disable_session_metadata true
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
