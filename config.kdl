@@ -1,5 +1,5 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
-keybinds {
+keybinds clear-defaults=true {
     normal {
         bind "Ctrl h" {
             MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
@@ -25,10 +25,12 @@ keybinds {
                 payload "right";
             };
         }
-    }
-    normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
+        bind "Ctrl u" { GoToPreviousTab; }
+        bind "Ctrl i" { GoToNextTab; }
+        bind "Ctrl n" { NewPane; }
+        bind "Ctrl f" { ToggleFloatingPanes; }
+        bind "Ctrl =" { Resize "Increase"; }
+        bind "Ctrl -" { Resize "Decrease"; }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -147,44 +149,6 @@ keybinds {
             SwitchToMode "Normal"
         }
     }
-    tmux {
-        bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
-        bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "c" { NewTab; SwitchToMode "Normal"; }
-        bind "," { SwitchToMode "RenameTab"; }
-        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
-        bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "o" { FocusNextPane; }
-        bind "d" { Detach; }
-        bind "Space" { NextSwapLayout; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
-    }
-    shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
-        bind "Ctrl n" { NewPane; }
-        bind "Ctrl i" { MoveTab "Left"; }
-        bind "Ctrl o" { MoveTab "Right"; }
-        // bind "Ctrl h" "Alt Left" { MoveFocusOrTab "Left"; }
-        // bind "Ctrl l" "Alt Right" { MoveFocusOrTab "Right"; }
-        // bind "Ctrl j" "Alt Down" { MoveFocus "Down"; }
-        // bind "Ctrl k" "Alt Up" { MoveFocus "Up"; }
-        bind "Ctrl =" "Alt +" { Resize "Increase"; }
-        bind "Ctrl -" { Resize "Decrease"; }
-        bind "Ctrl [" { PreviousSwapLayout; }
-        bind "Ctrl ]" { NextSwapLayout; }
-    }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
@@ -205,9 +169,6 @@ keybinds {
     }
     shared_except "move" "locked" {
         bind "Ctrl b" { SwitchToMode "Move"; }
-    }
-    shared_except "tmux" "locked" {
-        bind "Alt b" { SwitchToMode "Tmux"; }
     }
 }
 
