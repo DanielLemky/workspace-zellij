@@ -4,8 +4,8 @@
 
 keybinds clear-defaults=true {
     normal {
-        bind "Ctrl Shift i" { GoToNextTab; }
-        bind "Ctrl Shift u" { GoToPreviousTab; }
+        bind "Ctrl alt i" { GoToNextTab; }
+        bind "Ctrl alt u" { GoToPreviousTab; }
     }
     locked {
         bind "Ctrl Alt g" { SwitchToMode "normal"; }
