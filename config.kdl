@@ -81,7 +81,7 @@ keybinds clear-defaults=true {
         bind "up" { MovePane "up"; }
         bind "right" { MovePane "right"; }
         bind "h" { MovePane "left"; }
-        bind "Ctrl Alt h" { SwitchToMode "normal"; }
+        bind "Ctrl Alt m" { SwitchToMode "normal"; }
         bind "j" { MovePane "down"; }
         bind "k" { MovePane "up"; }
         bind "l" { MovePane "right"; }
@@ -134,16 +134,6 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
-        bind "Ctrl Alt Shift left" { MoveFocusOrTab "left"; }
-        bind "Ctrl Alt Shift down" { MoveFocus "down"; }
-        bind "Ctrl Alt Shift up" { MoveFocus "up"; }
-        bind "Ctrl Alt Shift right" { MoveFocusOrTab "right"; }
-        bind "Ctrl Alt Shift +" { Resize "Increase"; }
-        bind "Ctrl Alt Shift -" { Resize "Decrease"; }
-        bind "Ctrl Alt Shift =" { Resize "Increase"; }
-        bind "Ctrl Alt Shift [" { PreviousSwapLayout; }
-        bind "Ctrl Alt Shift ]" { NextSwapLayout; }
-        bind "Ctrl Alt Shift f" { ToggleFloatingPanes; }
         bind "Ctrl h" {
             MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
@@ -151,9 +141,6 @@ keybinds clear-defaults=true {
                 floating false
             }
         }
-        bind "Ctrl Alt Shift h" { MoveFocusOrTab "left"; }
-        bind "Ctrl i" { GoToNextTab; }
-        bind "Ctrl Alt Shift i" { MoveTab "left"; }
         bind "Ctrl j" {
             MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
@@ -161,7 +148,6 @@ keybinds clear-defaults=true {
                 floating false
             }
         }
-        bind "Ctrl Alt Shift j" { MoveFocus "down"; }
         bind "Ctrl k" {
             MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
@@ -169,7 +155,6 @@ keybinds clear-defaults=true {
                 floating false
             }
         }
-        bind "Ctrl Alt Shift k" { MoveFocus "up"; }
         bind "Ctrl l" {
             MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
@@ -177,12 +162,17 @@ keybinds clear-defaults=true {
                 floating false
             }
         }
-        bind "Ctrl Alt Shift l" { MoveFocusOrTab "right"; }
-        bind "Ctrl Alt Shift n" { NewPane; }
-        bind "Ctrl Alt Shift o" { MoveTab "right"; }
+        bind "Ctrl i" { GoToNextTab; }
+        bind "Ctrl u" { GoToPreviousTab; }
+        bind "Ctrl Alt +" { Resize "Increase"; }
+        bind "Ctrl Alt -" { Resize "Decrease"; }
+        bind "Ctrl Alt =" { Resize "Increase"; }
+        bind "Ctrl Alt [" { PreviousSwapLayout; }
+        bind "Ctrl Alt ]" { NextSwapLayout; }
+        bind "Ctrl f" { ToggleFloatingPanes; }
     }
     shared_except "locked" "entersearch" "renametab" "renamepane" "move" "prompt" "tmux" {
-        bind "Ctrl Alt h" { SwitchToMode "move"; }
+        bind "Ctrl Alt m" { SwitchToMode "move"; }
     }
     shared_except "locked" "entersearch" "renametab" "renamepane" "prompt" "tmux" {
         bind "Ctrl Alt g" { SwitchToMode "locked"; }
