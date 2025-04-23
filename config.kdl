@@ -494,6 +494,20 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
+    theme "custom" {
+        fg "#A6DB95"           // Foreground for active elements (matches active tab)
+        bg "#1E2326"           // Background (matches zjstatus bar)
+        black "#1E2326"        // Dark background for consistency
+        red "#FF6E6E"          // Optional, for errors
+        green "#a6da95"        // Matches NORMAL mode
+        yellow "#F1E4A2"       // Optional, for warnings
+        blue "#6D7086"         // Matches inactive tabs/modes
+        magenta "#C792EA"      // Optional
+        cyan "#89DDFF"         // Optional
+        white "#D8DEE9"        // Optional
+        orange "#F78C6C"       // Optional
+        gray "#6e738d"         // Matches LOCKED mode
+    }
 }
 
 // Plugins to load in the background when a new session starts
@@ -517,7 +531,7 @@ ui {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "everforest"
+theme "custom"
  
 // Choose the base input mode of zellij.
 // Default: normal
